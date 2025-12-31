@@ -1,0 +1,11 @@
+# JewelryDisplayPro Robots.txt
+# https://www.jewelrydisplaypro.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.jewelrydisplaypro.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
