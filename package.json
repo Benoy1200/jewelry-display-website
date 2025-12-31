@@ -1,0 +1,11 @@
+{
+    "name": "jewelry-display-website",
+    "version": "1.0.0",
+    "description": "Static site for JewelryDisplayPro",
+    "scripts": {
+        "lint": "htmlhint '**/*.html'"
+    },
+    "devDependencies": {
+        "htmlhint": "^0.14.2"
+    }
+}
