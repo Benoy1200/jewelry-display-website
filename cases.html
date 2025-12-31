@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - Jewelry Store Design Examples | JewelryDisplayPro</title>
+    <meta name="description"
+        content="Inspiring jewelry store design case studies. See how leading brands and boutiques create stunning display experiences with premium showcases.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Cases Page Specific Styles */
+        .cases-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(45, 45, 68, 0.95)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200') center/cover;
+            text-align: center;
+            color: white;
+        }
+
+        .cases-hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .cases-hero p {
+            color: var(--gray-300);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .cases-filter {
+            padding: 30px 0;
+            background: white;
+            border-bottom: 1px solid var(--gray-100);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-pill {
+            padding: 10px 20px;
+            border: 2px solid var(--gray-300);
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .filter-pill:hover,
+        .filter-pill.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+        }
+
+        .cases-gallery {
+            padding: 60px 0;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .case-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .case-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .case-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .case-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: white;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .case-card:hover .case-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .case-overlay h3 {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .case-overlay p {
+            font-size: 0.85rem;
+            color: var(--gray-300);
+            margin-bottom: 10px;
+        }
+
+        .case-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .case-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+        }
+
+        /* Featured Case */
+        .featured-case {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .featured-case .case-overlay {
+            padding: 40px 30px 30px;
+        }
+
+        .featured-case .case-overlay h3 {
+            font-size: 1.5rem;
+        }
+
+        /* Case Stats */
+        .case-stats {
+            padding: 60px 0;
+            background: var(--gray-100);
+        }
+
+        .stats-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-box .label {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* Submit Case CTA */
+        .submit-case {
+            padding: 60px 0;
+        }
+
+        .submit-box {
+            background: var(--gradient);
+            padding: 50px;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .submit-box h2,
+        .submit-box p {
+            color: white;
+        }
+
+        .submit-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .submit-box .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        @media (max-width: 992px) {
+            .cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-case {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .stats-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .submit-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-case {
+                grid-column: span 1;
+            }
+
+            .cases-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">Jewelry<span>Display</span>Pro</a>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Knowledge Center</a>
+                        <ul class="dropdown-menu">
+                            <li class="menu-title">Resources</li>
+                            <li><a href="/categories/buying-guides.html"><i class="fas fa-book"></i> Buying Guides</a>
+                            </li>
+                            <li><a href="/categories/design-tips.html"><i class="fas fa-palette"></i> Design Tips</a>
+                            </li>
+                            <li><a href="/categories/technical.html"><i class="fas fa-cog"></i> Technical</a></li>
+                            <li><a href="/categories/industry-news.html"><i class="fas fa-newspaper"></i> Industry
+                                    News</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/cases.html" class="active">Cases</a></li>
+                    <li><a href="/suppliers.html">Suppliers</a></li>
+                    <li><a href="/blog.html">Articles</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="/contact.html" class="btn btn-primary">Get Free Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="cases-hero">
+        <div class="container">
+            <h1>Case Studies & Inspiration</h1>
+            <p>Explore stunning jewelry store designs from around the world. Get inspired by how leading brands showcase
+                their precious collections.</p>
+            <a href="#gallery" class="btn btn-primary"><i class="fas fa-images"></i> Browse Gallery</a>
+        </div>
+    </section>
+
+    <!-- Filter -->
+    <section class="cases-filter" id="gallery">
+        <div class="container">
+            <div class="filter-pills">
+                <button class="filter-pill active">All Projects</button>
+                <button class="filter-pill">Luxury Brands</button>
+                <button class="filter-pill">Boutique Stores</button>
+                <button class="filter-pill">Mall Counters</button>
+                <button class="filter-pill">Museum Displays</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Gallery -->
+    <section class="cases-gallery">
+        <div class="container">
+            <div class="cases-grid">
+                <!-- Featured Case -->
+                <div class="case-card featured-case">
+                    <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&h=600&fit=crop"
+                        alt="Luxury Jewelry Store">
+                    <div class="case-overlay">
+                        <h3>Cartier Shanghai Flagship Store</h3>
+                        <p>Complete store renovation with custom glass showcases and integrated lighting systems.</p>
+                        <div class="case-tags">
+                            <span class="case-tag">Luxury Brand</span>
+                            <span class="case-tag">Custom Design</span>
+                            <span class="case-tag">LED Lighting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Cases -->
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop"
+                        alt="Diamond Display">
+                    <div class="case-overlay">
+                        <h3>Tiffany & Co. New York</h3>
+                        <p>Iconic blue showcases with precision lighting.</p>
+                        <div class="case-tags">
+                            <span class="case-tag">Luxury</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&h=300&fit=crop"
+                        alt="Modern Jewelry Store">
+                    <div class="case-overlay">
+                        <h3>Modern Boutique - Milan</h3>
+                        <p>Minimalist design with floating displays.</p>
+                        <div class="case-tags">
+                            <span class="case-tag">Boutique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=300&fit=crop"
+                        alt="Gold Jewelry Display">
+                    <div class="case-overlay">
+                        <h3>Chow Tai Fook - Hong Kong</h3>
+                        <p>Gold-focused warm lighting design.</p>
+                        <div class="case-tags">
+                            <span class="case-tag">Gold</span>
+                            <span class="case-tag">Chain Store</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=300&fit=crop"
+                        alt="Pearl Display">
+                    <div class="case-overlay">
+                        <h3>Mikimoto Tokyo</h3>
+                        <p>Elegant pearl display with soft lighting.</p>
+                        <div class="case-tags">
+                            <span class="case-tag">Pearl</span>
+                            <span class="case-tag">Japanese</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400&h=300&fit=crop"
+                        alt="Museum Display">
+                    <div class="case-overlay">
+                        <h3>Royal Jewelry Museum</h3>
+                        <p>Museum-grade security showcases.</p>
+                        <div class="case-tags">
+                            <span class="case-tag">Museum</span>
+                            <span class="case-tag">Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&h=300&fit=crop"
+                        alt="Mall Counter">
+                    <div class="case-overlay">
+                        <h3>Mall Counter - Dubai</h3>
+                        <p>Island display with 360° visibility.</p>
+                        <div class="case-tags">
+                            <span class="case-tag">Mall</span>
+                            <span class="case-tag">Island</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=300&fit=crop"
+                        alt="Watch Display">
+                    <div class="case-overlay">
+                        <h3>Rolex Boutique - Geneva</h3>
+                        <p>Watch-focused precision displays.</p>
+                        <div class="case-tags">
+                            <span class="case-tag">Watches</span>
+                            <span class="case-tag">Luxury</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more" style="margin-top: 40px;">
+                <button class="btn btn-outline">Load More Cases</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="case-stats">
+        <div class="container">
+            <div class="stats-content">
+                <div class="stat-box">
+                    <div class="number">200+</div>
+                    <div class="label">Case Studies</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">50+</div>
+                    <div class="label">Countries</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">100+</div>
+                    <div class="label">Luxury Brands</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">500+</div>
+                    <div class="label">Store Projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Case -->
+    <section class="submit-case">
+        <div class="container">
+            <div class="submit-box">
+                <div>
+                    <h2>Have a Great Jewelry Store Design?</h2>
+                    <p>Share your project with our community. Featured cases get exposure to thousands of industry
+                        professionals.</p>
+                </div>
+                <a href="/contact.html" class="btn">
+                    <i class="fas fa-camera"></i>
+                    Submit Your Case
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Your Perfect Display?</h2>
+                <p>Get connected with suppliers who can bring these designs to life for your store.</p>
+                <a href="/contact.html" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    Get Free Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>JewelryDisplayPro</h3>
+                    <p>The leading online resource for jewelry display solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Knowledge Center</h4>
+                    <ul>
+                        <li><a href="/categories/buying-guides.html">Buying Guides</a></li>
+                        <li><a href="/categories/design-tips.html">Design Tips</a></li>
+                        <li><a href="/categories/technical.html">Technical</a></li>
+                        <li><a href="/categories/industry-news.html">Industry News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="/cases.html">Case Studies</a></li>
+                        <li><a href="/suppliers.html">Suppliers</a></li>
+                        <li><a href="/contact.html">Get Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JewelryDisplayPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
