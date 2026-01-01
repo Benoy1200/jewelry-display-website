@@ -38,7 +38,27 @@
 
 ---
 
-## 3. 商业获利模式 (Monetization Strategy)
+## 3. 用户视角深度体验诊断 (User-Centric UX Audit)
+
+我们换位思考，假设自己是一位**焦虑的珠宝店老板**，手握 $20,000 美金预算，急需在开业前搞定展柜。当你访问这个网站时，你的心理活动如下：
+
+### 🤨 信任感断层 (Trust Gaps)
+*   **"你们到底是谁？"**: 网站看起来很专业，但 `About Us` 说你们是 "Resource"，而 `Contact` 页面又像是在直接卖货。
+    *   *用户疑虑*: "我填了表单，是你会联系我，还是我的邮箱会被卖给 100 个骚扰电话的工厂？"
+    *   *优化建议*: 必须增加一个 **"How It Works" (服务流程图)**。明确告诉用户：**提交需求 -> 平台顾问人工筛选 -> 匹配 3 家最合适的工厂 -> 收到对比报价**。这能极大降低心理防备。
+*   **"凭什么信你选的工厂？"**: 网站上写了 "Verified Suppliers"，但没有展示 *Verified* 的标准。
+    *   *优化建议*: 设计一个像样的 **"Verified Partner Badge" (认证徽章)**，并列出认证标准（如：实地验厂、ISO认证、出口资质），甚至放几个（哪怕是占位符的）SGS/TUV 证书图标。
+
+### 🚧 转化摩擦 (Conversion Friction)
+*   **询盘表单太"干"**: `Contact` 表单虽然全面，但缺乏“诱饵”。
+    *   *用户心理*: "填这个表单好麻烦，万一填了没回应呢？"
+    *   *优化建议*: 在表单旁边加一句强有力的承诺（Micro-copy），例如：**"Average saving: 30% compared to local distributors" (比本地经销商平均省 30%)**。
+*   **缺乏"真人"气息**: B2B 交易非常看重**人**。目前的网站虽然专业，但有点“冷冰冰”。
+    *   *优化建议*: 在 `About` 或侧边栏增加一个 "Editor's Note" 或 "Founder's Message"，放一张（AI生成的）专业顾问照片，签名 "Henry - Lead Consultant"，瞬间拉近距离。
+
+---
+
+## 4. 商业获利模式 (Monetization Strategy)
 
 对于这个类型的网站 (B2B Niche Content Site)，靠 Google AdSense 赚几分钱广告费是**最低级**的。你的核心盈利点在于 **"High Ticket Leads" (高客单价线索)**。
 
@@ -51,7 +71,7 @@
 
 ---
 
-## 4. 长期运营策略 (Operational Strategy)
+## 5. 长期运营策略 (Operational Strategy)
 
 要做成一个能持续赚钱的 "Authority Site"（权威站），你需要坚持做三件事：
 
