@@ -13,9 +13,12 @@
 - [x] 修复联系表单提交故障 (切换至 FormSubmit.co)
 - [x] 更新 `suppliers.html` 每页显示 8 个供应商
 - [x] 创建 `suppliers-page-2.html` 并实现分页逻辑
-- [x] 创建长尾词文章: `articles/best-lighting-for-diamond-showcases.html`
-- [x] 创建 Lead Magnet 落地页: `resources/2026-lookbook.html`
+- [x] 创建长尾词文章: `articles/best-lighting-for-diamond-showcases.html` (💎)
+- [x] 创建 Lead Magnet 落地页: `resources/2026-lookbook.html` (🧲)
 - [x] 首页添加 "下载电子书" 入口
+- [x] 统一首页所有 CTA 按钮指向 `/contact.html`
+- [x] **Contact 页增加信任诱饵**：表单顶部"省钱 Banner"(30-40%)，底部三连承诺 (🆕)
+- [x] **About 页增加真人气息**：Founder's Message 模块 (Henry Chen - Lead Consultant) (🆕)
 
 ## ⏳ 待办 / 下一步
 ### 🖼️ 图片生成 (等待额度恢复)
@@ -27,6 +30,7 @@
 - [ ] 为 `jewelry-display-trends-2026.html` 补充文中配图
 - [ ] 为 `jewelry-display-price-guide.html` 补充文中配图
 - [ ] 生成社媒推广图片 (Facebook Post)
+- [ ] 为 About 页 Founder's Message 生成 Henry 专业顾问照片
 
 ## 📂 未来维护
 - [ ] 定期检查 FormSubmit 表单送达情况
