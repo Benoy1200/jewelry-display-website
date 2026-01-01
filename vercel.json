@@ -1,0 +1,14 @@
+{
+    "redirects": [
+        {
+            "source": "/articles",
+            "destination": "/blog.html",
+            "permanent": true
+        },
+        {
+            "source": "/articles/",
+            "destination": "/blog.html",
+            "permanent": true
+        }
+    ]
+}
