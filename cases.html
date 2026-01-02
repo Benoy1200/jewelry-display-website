@@ -294,11 +294,11 @@
     <section class="cases-filter" id="gallery">
         <div class="container">
             <div class="filter-pills">
-                <button class="filter-pill active">All Projects</button>
-                <button class="filter-pill">Luxury Brands</button>
-                <button class="filter-pill">Boutique Stores</button>
-                <button class="filter-pill">Mall Counters</button>
-                <button class="filter-pill">Museum Displays</button>
+                <button class="filter-pill active" data-filter="all">All Projects</button>
+                <button class="filter-pill" data-filter="luxury">Luxury Brands</button>
+                <button class="filter-pill" data-filter="boutique">Boutique Stores</button>
+                <button class="filter-pill" data-filter="mall">Mall Counters</button>
+                <button class="filter-pill" data-filter="museum">Museum Displays</button>
             </div>
         </div>
     </section>
@@ -333,9 +333,8 @@
                     </div>
                 </div>
 
-                <div class="case-card">
-                    <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&h=300&fit=crop"
-                        alt="Modern Jewelry Store">
+                <div class="case-card" data-category="boutique">
+                    <img src="/images/jewelry_store_interior_1.png" alt="Luxury Jewelry Store Interior">
                     <div class="case-overlay">
                         <h3>Modern Boutique - Milan</h3>
                         <p>Minimalist design with floating displays.</p>
@@ -345,9 +344,8 @@
                     </div>
                 </div>
 
-                <div class="case-card">
-                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=300&fit=crop"
-                        alt="Gold Jewelry Display">
+                <div class="case-card" data-category="luxury">
+                    <img src="/images/jewelry_store_interior_2.png" alt="Upscale Jewelry Boutique">
                     <div class="case-overlay">
                         <h3>Chow Tai Fook - Hong Kong</h3>
                         <p>Gold-focused warm lighting design.</p>
@@ -358,9 +356,8 @@
                     </div>
                 </div>
 
-                <div class="case-card">
-                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=300&fit=crop"
-                        alt="Pearl Display">
+                <div class="case-card" data-category="luxury">
+                    <img src="/images/boutique_counter_showcase.png" alt="Premium Counter Display">
                     <div class="case-overlay">
                         <h3>Mikimoto Tokyo</h3>
                         <p>Elegant pearl display with soft lighting.</p>
@@ -371,9 +368,8 @@
                     </div>
                 </div>
 
-                <div class="case-card">
-                    <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400&h=300&fit=crop"
-                        alt="Museum Display">
+                <div class="case-card" data-category="museum">
+                    <img src="/images/museum_jewelry_display.png" alt="Museum Grade Jewelry Display">
                     <div class="case-overlay">
                         <h3>Royal Jewelry Museum</h3>
                         <p>Museum-grade security showcases.</p>
@@ -384,9 +380,8 @@
                     </div>
                 </div>
 
-                <div class="case-card">
-                    <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&h=300&fit=crop"
-                        alt="Mall Counter">
+                <div class="case-card" data-category="mall">
+                    <img src="/images/mall_jewelry_counter.png" alt="Shopping Mall Jewelry Counter">
                     <div class="case-overlay">
                         <h3>Mall Counter - Dubai</h3>
                         <p>Island display with 360° visibility.</p>
@@ -582,6 +577,28 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-pill').forEach(button => {
+            button.addEventListener('click', function () {
+                // Update active state
+                document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+                const cards = document.querySelectorAll('.case-card');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 
